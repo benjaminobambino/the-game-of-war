@@ -59,21 +59,18 @@ const playerDeck = [];
 
 const compDeck = [];
 
-//GAME LOGIC FUNCTIONS
+// GAME LOGIC FUNCTIONS
 
-const shuffleAndDeal = dealerDeck.forEach((card) => {
-  const newPlayerCard = Math.floor(Math.random() * dealerDeck.length);
-  console.log(dealerDeck);
-  playerDeck.push(dealerDeck[newPlayerCard]);
-  console.log(playerDeck);
-  dealerDeck.splice(newPlayerCard, 1);
-  console.log(dealerDeck);
-  const newCompCard = Math.floor(Math.random() * dealerDeck.length);
-  compDeck.push(dealerDeck[newCompCard]);
-  console.log(compDeck);
-  dealerDeck.splice(newCompCard, 1);
-  // console.log(dealerDeck);
-});
+const shuffleAndDeal = () => {
+  while (dealerDeck.length > 0) {
+    const newPlayerCard = Math.floor(Math.random() * dealerDeck.length);
+    playerDeck.push(dealerDeck[newPlayerCard]);
+    dealerDeck.splice(newPlayerCard, 1);
+    const newCompCard = Math.floor(Math.random() * dealerDeck.length);
+    compDeck.push(dealerDeck[newCompCard]);
+    dealerDeck.splice(newCompCard, 1);
+  }
+};
 
 shuffleAndDeal();
 
