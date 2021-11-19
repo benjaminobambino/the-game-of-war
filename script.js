@@ -1,6 +1,6 @@
 // GLOBAL VARIABLES
 
-const dealerDeck = [
+let dealerDeck = [
   { twoHearts: 2 },
   { twoDiamonds: 2 },
   { twoSpades: 2 },
@@ -55,9 +55,9 @@ const dealerDeck = [
   { aceClubs: 14 }
 ];
 
-const playerDeck = [];
+let playerDeck = [];
 
-const computerDeck = [];
+let computerDeck = [];
 
 let currentPlayerCard = {};
 
@@ -73,9 +73,17 @@ let computerCardCount = document.querySelector('#computer-counter');
 
 const messageBoard = document.querySelector('.message-board');
 
+const playNextCard = document.querySelector('.play-next-card');
+
+const reDeal = document.querySelector('.re-deal');
+
 // GAME LOGIC FUNCTIONS
 
 const shuffleAndDeal = () => {
+  dealerDeck.push(...playerDeck, ...computerDeck);
+  playerDeck = [];
+  computerDeck = [];
+
   while (dealerDeck.length > 0) {
     const newPlayerCard = Math.floor(Math.random() * dealerDeck.length);
     playerDeck.push(dealerDeck[newPlayerCard]);
@@ -107,7 +115,7 @@ const compareCards = () => {
   ) {
     console.log('player wins!');
     playerDeck.push(...dealerDeck);
-    dealerDeck.splice(0);
+    dealerDeck = [];
     keepScore();
   } else if (
     parseInt(Object.values(currentComputerCard)) >
@@ -115,7 +123,7 @@ const compareCards = () => {
   ) {
     console.log('cumputer wins!');
     computerDeck.push(...dealerDeck);
-    dealerDeck.splice(0);
+    dealerDeck = [];
     keepScore();
   } else {
     tiebreakerWar();
@@ -147,7 +155,9 @@ const keepScore = () => {
 shuffleAndDeal();
 
 // EVENT LISTENERS
-document.querySelector('.play-next-card').addEventListener('click', () => {
+playNextCard.addEventListener('click', () => {
   playCard();
   compareCards();
 });
+
+reDeal.addEventListener('click', shuffleAndDeal);
