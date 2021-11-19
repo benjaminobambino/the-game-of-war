@@ -63,13 +63,15 @@ let currentPlayerCard = {};
 
 let currentComputerCard = {};
 
+const playerPlayPile = document.querySelector('.player-play-pile');
+
+const computerPlayPile = document.querySelector('.computer-play-pile');
+
 let playerCardCount = document.querySelector('#player-counter');
 
 let computerCardCount = document.querySelector('#computer-counter');
 
-const playerCardsPlayed = [];
-
-const computerCardsPlayed = [];
+const messageBoard = document.querySelector('.message-board');
 
 // GAME LOGIC FUNCTIONS
 
@@ -87,23 +89,15 @@ const shuffleAndDeal = () => {
 };
 
 const playCard = () => {
+  messageBoard.innerText = '';
   currentPlayerCard = playerDeck[0];
-  document.querySelector('.player-play-pile').innerText = `${Object.keys(
-    currentPlayerCard
-  )}`;
+  playerPlayPile.innerText = `${Object.keys(currentPlayerCard)}`;
   dealerDeck.push(currentPlayerCard);
   playerDeck.splice(currentPlayerCard, 1);
   currentComputerCard = computerDeck[0];
-  document.querySelector('.computer-play-pile').innerText = `${Object.keys(
-    currentComputerCard
-  )}`;
+  computerPlayPile.innerText = `${Object.keys(currentComputerCard)}`;
   dealerDeck.push(currentComputerCard);
   computerDeck.splice(currentComputerCard, 1);
-};
-
-const keepScore = () => {
-  playerCardCount.innerText = playerDeck.length;
-  computerCardCount.innerText = computerDeck.length;
 };
 
 const compareCards = () => {
@@ -114,8 +108,6 @@ const compareCards = () => {
     console.log('player wins!');
     playerDeck.push(...dealerDeck);
     dealerDeck.splice(0);
-    console.log(playerDeck, computerDeck);
-    console.log(dealerDeck);
     keepScore();
   } else if (
     parseInt(Object.values(currentComputerCard)) >
@@ -124,21 +116,35 @@ const compareCards = () => {
     console.log('cumputer wins!');
     computerDeck.push(...dealerDeck);
     dealerDeck.splice(0);
-    console.log(playerDeck, computerDeck);
-    console.log(dealerDeck);
     keepScore();
   } else {
-    console.log(`it's a tie! Play your next card.`);
-    // playCard();
-    // compareCards();
+    tiebreakerWar();
   }
 };
 
+const tiebreakerWar = () => {
+  console.log(`it's a tie`);
+  messageBoard.innerText = `It's a tie! This means WAR! Play your next card and let's settle this ...`;
+  console.log(currentPlayerCard);
+  let unknownPlayerCard = playerDeck[0];
+  console.log(unknownPlayerCard);
+  playerPlayPile.innerText = `Facedown Player Card`;
+  dealerDeck.push(unknownPlayerCard);
+  playerDeck.splice(unknownPlayerCard, 1);
+  let unknownComputerCard = computerDeck[0];
+  console.log(unknownComputerCard);
+  computerPlayPile.innerText = `Facedown Computer Card`;
+  dealerDeck.push(unknownComputerCard);
+  computerDeck.splice(unknownComputerCard, 1);
+  console.log(dealerDeck);
+};
+
+const keepScore = () => {
+  playerCardCount.innerText = playerDeck.length;
+  computerCardCount.innerText = computerDeck.length;
+};
+
 shuffleAndDeal();
-// playCard();
-// compareCards();
-// console.log(currentPlayerCard);
-// console.log(currentComputerCard);
 
 // EVENT LISTENERS
 document.querySelector('.play-next-card').addEventListener('click', () => {
