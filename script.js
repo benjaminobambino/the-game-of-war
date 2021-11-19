@@ -59,6 +59,10 @@ const playerDeck = [];
 
 const compDeck = [];
 
+let currentPlayerCard = {};
+
+let currentCompCard = {};
+
 // GAME LOGIC FUNCTIONS
 
 const shuffleAndDeal = () => {
@@ -72,6 +76,20 @@ const shuffleAndDeal = () => {
   }
 };
 
-shuffleAndDeal();
+const playCard = () => {
+  currentPlayerCard = playerDeck[0];
+  document.querySelector('.player-play-pile').innerText = `${Object.keys(
+    currentPlayerCard
+  )}`;
+  currentCompCard = compDeck[0];
+  document.querySelector('.comp-play-pile').innerText = `${Object.keys(
+    currentCompCard
+  )}`;
+};
+
+// shuffleAndDeal();
+// playCard();
+// console.log(currentPlayerCard);
+// console.log(currentCompCard);
 
 // EVENT LISTENERS
