@@ -1,0 +1,25 @@
+body {
+  background: red;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+}
+.counters {
+  display: flex;
+  justify-content: space-evenly;
+}
+.card-slots {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card-deck {
+  color: white;
+}
+
+.player-draw-deck {
+  font-weight: bold;
+}
