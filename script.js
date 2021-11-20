@@ -83,7 +83,6 @@ const shuffleAndDeal = () => {
   dealerDeck.push(...playerDeck, ...computerDeck);
   playerDeck = [];
   computerDeck = [];
-
   while (dealerDeck.length > 0) {
     const newPlayerCard = Math.floor(Math.random() * dealerDeck.length);
     playerDeck.push(dealerDeck[newPlayerCard]);
@@ -93,6 +92,16 @@ const shuffleAndDeal = () => {
     computerDeck.push(dealerDeck[newComputerCard]);
     dealerDeck.splice(newComputerCard, 1);
     computerCardCount.innerText = computerDeck.length;
+  }
+};
+
+const checkForWin = () => {
+  if (playerDeck.length === 0) {
+    messageBoard.innerText = `You are out of cards. You have lost the War.`;
+    gameOver();
+  } else if (computerDeck.length === 0) {
+    messageBoard.innerText = 'You have won the war!';
+    gameOver();
   }
 };
 
@@ -151,6 +160,8 @@ const keepScore = () => {
   playerCardCount.innerText = playerDeck.length;
   computerCardCount.innerText = computerDeck.length;
 };
+
+const gameOver = () => {};
 
 shuffleAndDeal();
 
