@@ -80,6 +80,9 @@ const reDeal = document.querySelector('.re-deal');
 // GAME LOGIC FUNCTIONS
 
 const shuffleAndDeal = () => {
+  messageBoard.innerText = '';
+  currentPlayerCard = {};
+  currentComputerCard = {};
   dealerDeck.push(...playerDeck, ...computerDeck);
   playerDeck = [];
   computerDeck = [];
@@ -91,9 +94,6 @@ const shuffleAndDeal = () => {
     const newComputerCard = Math.floor(Math.random() * dealerDeck.length);
     computerDeck.push(dealerDeck[newComputerCard]);
     dealerDeck.splice(newComputerCard, 1);
-    // Test section
-    computerDeck.splice(1);
-    // end test section
     computerCardCount.innerText = computerDeck.length;
   }
 };
@@ -101,10 +101,11 @@ const shuffleAndDeal = () => {
 const checkForWin = () => {
   if (playerDeck.length === 0) {
     messageBoard.innerText = `You are out of cards. You have lost the War.`;
+    gameOver();
   } else if (computerDeck.length === 0) {
     messageBoard.innerText = 'You have won the war!';
+    gameOver();
   }
-  gameOver();
 };
 
 const playCard = () => {
@@ -117,6 +118,7 @@ const playCard = () => {
   computerPlayPile.innerText = `${Object.keys(currentComputerCard)}`;
   dealerDeck.push(currentComputerCard);
   computerDeck.splice(currentComputerCard, 1);
+  compareCards();
 };
 
 const compareCards = () => {
@@ -137,6 +139,7 @@ const compareCards = () => {
   } else {
     tiebreakerWar();
   }
+  keepScore();
   checkForWin();
 };
 
@@ -158,18 +161,22 @@ const keepScore = () => {
 };
 
 const gameOver = () => {
-  playNextCard.removeEventListener('click', () => {
-    playCard();
-    compareCards();
-  });
+  playNextCard.removeEventListener('click', playCard);
 };
 
-shuffleAndDeal();
-
 // EVENT LISTENERS
-playNextCard.addEventListener('click', () => {
-  playCard();
-  compareCards();
+
+const startGame = () => {
+  playNextCard.addEventListener('click', playCard);
+};
+
+reDeal.addEventListener('click', () => {
+  startGame();
+  shuffleAndDeal();
 });
 
-reDeal.addEventListener('click', shuffleAndDeal);
+// FUNCTIONS CALLED
+
+startGame();
+
+shuffleAndDeal();
