@@ -91,6 +91,9 @@ const shuffleAndDeal = () => {
     const newComputerCard = Math.floor(Math.random() * dealerDeck.length);
     computerDeck.push(dealerDeck[newComputerCard]);
     dealerDeck.splice(newComputerCard, 1);
+    // Test section
+    computerDeck.splice(1);
+    // end test section
     computerCardCount.innerText = computerDeck.length;
   }
 };
@@ -98,11 +101,10 @@ const shuffleAndDeal = () => {
 const checkForWin = () => {
   if (playerDeck.length === 0) {
     messageBoard.innerText = `You are out of cards. You have lost the War.`;
-    gameOver();
   } else if (computerDeck.length === 0) {
     messageBoard.innerText = 'You have won the war!';
-    gameOver();
   }
+  gameOver();
 };
 
 const playCard = () => {
@@ -122,7 +124,6 @@ const compareCards = () => {
     parseInt(Object.values(currentPlayerCard)) >
     parseInt(Object.values(currentComputerCard))
   ) {
-    console.log('player wins!');
     playerDeck.push(...dealerDeck);
     dealerDeck = [];
     keepScore();
@@ -130,30 +131,25 @@ const compareCards = () => {
     parseInt(Object.values(currentComputerCard)) >
     parseInt(Object.values(currentPlayerCard))
   ) {
-    console.log('cumputer wins!');
     computerDeck.push(...dealerDeck);
     dealerDeck = [];
     keepScore();
   } else {
     tiebreakerWar();
   }
+  checkForWin();
 };
 
 const tiebreakerWar = () => {
-  console.log(`it's a tie`);
   messageBoard.innerText = `It's a tie! This means WAR! Play your next card and let's settle this ...`;
-  console.log(currentPlayerCard);
   let unknownPlayerCard = playerDeck[0];
-  console.log(unknownPlayerCard);
   playerPlayPile.innerText = `Facedown Player Card`;
   dealerDeck.push(unknownPlayerCard);
   playerDeck.splice(unknownPlayerCard, 1);
   let unknownComputerCard = computerDeck[0];
-  console.log(unknownComputerCard);
   computerPlayPile.innerText = `Facedown Computer Card`;
   dealerDeck.push(unknownComputerCard);
   computerDeck.splice(unknownComputerCard, 1);
-  console.log(dealerDeck);
 };
 
 const keepScore = () => {
@@ -161,7 +157,12 @@ const keepScore = () => {
   computerCardCount.innerText = computerDeck.length;
 };
 
-const gameOver = () => {};
+const gameOver = () => {
+  playNextCard.removeEventListener('click', () => {
+    playCard();
+    compareCards();
+  });
+};
 
 shuffleAndDeal();
 
