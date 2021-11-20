@@ -1,4 +1,4 @@
-// GLOBAL VARIABLES
+// GLOBAL VARIABLES ////////////////////////////////
 
 let dealerDeck = [
   { twoHearts: 2 },
@@ -77,7 +77,7 @@ const playNextCard = document.querySelector('.play-next-card');
 
 const reDeal = document.querySelector('.re-deal');
 
-// GAME LOGIC FUNCTIONS
+// GAME LOGIC FUNCTIONS ////////////////////////////////
 
 const shuffleAndDeal = () => {
   messageBoard.innerText = '';
@@ -99,6 +99,7 @@ const shuffleAndDeal = () => {
 };
 
 const checkForWin = () => {
+  keepScore();
   if (playerDeck.length === 0) {
     messageBoard.innerText = `You are out of cards. You have lost the War.`;
     gameOver();
@@ -137,22 +138,26 @@ const compareCards = () => {
     dealerDeck = [];
     keepScore();
   } else {
-    tiebreakerWar();
+    startTiebreakerWar();
   }
-  keepScore();
   checkForWin();
 };
 
-const tiebreakerWar = () => {
+const startTiebreakerWar = () => {
   messageBoard.innerText = `It's a tie! This means WAR! Play your next card and let's settle this ...`;
-  let unknownPlayerCard = playerDeck[0];
-  playerPlayPile.innerText = `Facedown Player Card`;
-  dealerDeck.push(unknownPlayerCard);
-  playerDeck.splice(unknownPlayerCard, 1);
-  let unknownComputerCard = computerDeck[0];
-  computerPlayPile.innerText = `Facedown Computer Card`;
-  dealerDeck.push(unknownComputerCard);
-  computerDeck.splice(unknownComputerCard, 1);
+  checkForWin();
+  if (playerDeck.length === 1 || computerDeck.length === 1) {
+    messageBoard.innerText = `Not enough cards to cover the tie. Play your next card to see if everyone makes it out alive ...`;
+  } else {
+    let unknownPlayerCard = playerDeck[0];
+    playerPlayPile.innerText = `Facedown Player Card`;
+    dealerDeck.push(unknownPlayerCard);
+    playerDeck.splice(unknownPlayerCard, 1);
+    let unknownComputerCard = computerDeck[0];
+    computerPlayPile.innerText = `Facedown Computer Card`;
+    dealerDeck.push(unknownComputerCard);
+    computerDeck.splice(unknownComputerCard, 1);
+  }
 };
 
 const keepScore = () => {
@@ -164,7 +169,7 @@ const gameOver = () => {
   playNextCard.removeEventListener('click', playCard);
 };
 
-// EVENT LISTENERS
+// EVENT LISTENERS ////////////////////////////////
 
 const startGame = () => {
   playNextCard.addEventListener('click', playCard);
@@ -175,7 +180,7 @@ reDeal.addEventListener('click', () => {
   shuffleAndDeal();
 });
 
-// FUNCTIONS CALLED
+// FUNCTIONS CALLED ON LAUNCH
 
 startGame();
 
