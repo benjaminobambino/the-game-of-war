@@ -83,8 +83,8 @@ const shuffleAndDeal = () => {
   messageBoard.innerText = '';
   currentPlayerCard = {};
   currentComputerCard = {};
-  playerPlayPile.className = '';
-  computerPlayPile.className = '';
+  playerPlayPile.className = 'play-pile';
+  computerPlayPile.className = 'play-pile';
   dealerDeck.push(...playerDeck, ...computerDeck);
   playerDeck = [];
   computerDeck = [];
@@ -112,6 +112,8 @@ const checkForWin = () => {
 };
 
 const playCard = () => {
+  playerPlayPile.className = `play-pile`;
+  computerPlayPile.className = `play-pile`;
   messageBoard.innerText = '';
   currentPlayerCard = playerDeck[0];
   playerPlayPile.className = `card ${Object.keys(currentPlayerCard)}`;
@@ -146,21 +148,24 @@ const compareCards = () => {
 };
 
 const startTiebreakerWar = () => {
-  messageBoard.innerText = `It's a tie! This means WAR! Play your next card and let's settle this ...`;
+  playNextCard.removeEventListener('click', playCard);
+  messageBoard.innerText = `It's a tie! This means WAR!`;
   checkForWin();
   if (playerDeck.length === 1 || computerDeck.length === 1) {
     messageBoard.innerText = `Not enough cards to cover the tie. Play your next card to see if everyone makes it out alive ...`;
   } else {
-    let unknownPlayerCard = playerDeck[0];
-    // playerPlayPile.innerText = `Facedown Player Card`;
-    playerPlayPile.className = `card back-blue`;
-    dealerDeck.push(unknownPlayerCard);
-    playerDeck.splice(unknownPlayerCard, 1);
-    let unknownComputerCard = computerDeck[0];
-    // computerPlayPile.innerText = `Facedown Computer Card`;
-    computerPlayPile.className = `card back-red`;
-    dealerDeck.push(unknownComputerCard);
-    computerDeck.splice(unknownComputerCard, 1);
+    setTimeout(() => {
+      messageBoard.innerText = `Play your next card and let's settle this ...`;
+      let unknownPlayerCard = playerDeck[0];
+      playerPlayPile.className = `card back-blue`;
+      dealerDeck.push(unknownPlayerCard);
+      playerDeck.splice(unknownPlayerCard, 1);
+      let unknownComputerCard = computerDeck[0];
+      computerPlayPile.className = `card back-red`;
+      dealerDeck.push(unknownComputerCard);
+      computerDeck.splice(unknownComputerCard, 1);
+      startGame();
+    }, 2500);
   }
 };
 
