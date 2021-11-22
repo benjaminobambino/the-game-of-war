@@ -152,11 +152,13 @@ const startTiebreakerWar = () => {
     messageBoard.innerText = `Not enough cards to cover the tie. Play your next card to see if everyone makes it out alive ...`;
   } else {
     let unknownPlayerCard = playerDeck[0];
-    playerPlayPile.innerText = `Facedown Player Card`;
+    // playerPlayPile.innerText = `Facedown Player Card`;
+    playerPlayPile.className = `card back-blue`;
     dealerDeck.push(unknownPlayerCard);
     playerDeck.splice(unknownPlayerCard, 1);
     let unknownComputerCard = computerDeck[0];
-    computerPlayPile.innerText = `Facedown Computer Card`;
+    // computerPlayPile.innerText = `Facedown Computer Card`;
+    computerPlayPile.className = `card back-red`;
     dealerDeck.push(unknownComputerCard);
     computerDeck.splice(unknownComputerCard, 1);
   }
