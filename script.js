@@ -89,14 +89,15 @@ const shuffleAndDeal = () => {
   playerDeck = [];
   computerDeck = [];
   while (dealerDeck.length > 0) {
+    // setTimeout(() => {
     const newPlayerCard = Math.floor(Math.random() * dealerDeck.length);
     playerDeck.push(dealerDeck[newPlayerCard]);
     dealerDeck.splice(newPlayerCard, 1);
-    playerCardCount.innerText = playerDeck.length;
     const newComputerCard = Math.floor(Math.random() * dealerDeck.length);
     computerDeck.push(dealerDeck[newComputerCard]);
     dealerDeck.splice(newComputerCard, 1);
-    computerCardCount.innerText = computerDeck.length;
+    keepScore();
+    // }, 1000);
   }
 };
 
@@ -170,8 +171,8 @@ const startTiebreakerWar = () => {
 };
 
 const keepScore = () => {
-  playerCardCount.innerText = playerDeck.length;
-  computerCardCount.innerText = computerDeck.length;
+  playerCardCount.innerText = `Your cards: ${playerDeck.length}`;
+  computerCardCount.innerText = `My cards: ${computerDeck.length}`;
 };
 
 const gameOver = () => {

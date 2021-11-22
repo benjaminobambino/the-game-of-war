@@ -1,8 +1,11 @@
 body {
   background: red;
-  text-align: center;
+  /* text-align: center; */
 }
 
+h1 {
+  text-align: center;;
+}
 nav {
   display: flex;
   justify-content: space-evenly;
@@ -11,6 +14,10 @@ nav {
   display: flex;
   justify-content: space-evenly;
 }
+
+/* #player-counter {
+  text-justify: left;
+} */
 
 .buttons {
   display: flex;
@@ -338,3 +345,7 @@ nav {
   .card.east.shadow,
   .card.E.shadow {
     box-shadow: -2px 2px 3px 0 rgba(41, 41, 41, 0.75); }
+
+.rules {
+  margin: auto 20vw;
+}
