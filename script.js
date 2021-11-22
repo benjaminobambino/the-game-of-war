@@ -116,15 +116,17 @@ const playCard = () => {
   playerPlayPile.className = `play-pile`;
   computerPlayPile.className = `play-pile`;
   messageBoard.innerText = '';
-  currentPlayerCard = playerDeck[0];
-  playerPlayPile.className = `card ${Object.keys(currentPlayerCard)}`;
-  dealerDeck.push(currentPlayerCard);
-  playerDeck.splice(currentPlayerCard, 1);
-  currentComputerCard = computerDeck[0];
-  computerPlayPile.className = `card ${Object.keys(currentComputerCard)}`;
-  dealerDeck.push(currentComputerCard);
-  computerDeck.splice(currentComputerCard, 1);
-  compareCards();
+  setTimeout(() => {
+    currentPlayerCard = playerDeck[0];
+    playerPlayPile.className = `card ${Object.keys(currentPlayerCard)}`;
+    dealerDeck.push(currentPlayerCard);
+    playerDeck.splice(currentPlayerCard, 1);
+    currentComputerCard = computerDeck[0];
+    computerPlayPile.className = `card ${Object.keys(currentComputerCard)}`;
+    dealerDeck.push(currentComputerCard);
+    computerDeck.splice(currentComputerCard, 1);
+    compareCards();
+  }, 250);
 };
 
 const compareCards = () => {
