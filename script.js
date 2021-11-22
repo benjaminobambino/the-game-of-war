@@ -86,18 +86,20 @@ const shuffleAndDeal = () => {
   playerPlayPile.className = 'play-pile';
   computerPlayPile.className = 'play-pile';
   dealerDeck.push(...playerDeck, ...computerDeck);
+  keepScore();
   playerDeck = [];
   computerDeck = [];
   while (dealerDeck.length > 0) {
-    // setTimeout(() => {
     const newPlayerCard = Math.floor(Math.random() * dealerDeck.length);
     playerDeck.push(dealerDeck[newPlayerCard]);
     dealerDeck.splice(newPlayerCard, 1);
+    // setTimeout(() => {
+    // keepScore();
+    // }, 1000);
     const newComputerCard = Math.floor(Math.random() * dealerDeck.length);
     computerDeck.push(dealerDeck[newComputerCard]);
     dealerDeck.splice(newComputerCard, 1);
     keepScore();
-    // }, 1000);
   }
 };
 
