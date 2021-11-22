@@ -63,9 +63,9 @@ let currentPlayerCard = {};
 
 let currentComputerCard = {};
 
-const playerPlayPile = document.querySelector('.player-play-pile');
+const playerPlayPile = document.querySelector('#player-play-pile');
 
-const computerPlayPile = document.querySelector('.computer-play-pile');
+const computerPlayPile = document.querySelector('#computer-play-pile');
 
 let playerCardCount = document.querySelector('#player-counter');
 
@@ -112,11 +112,15 @@ const checkForWin = () => {
 const playCard = () => {
   messageBoard.innerText = '';
   currentPlayerCard = playerDeck[0];
-  playerPlayPile.innerText = `${Object.keys(currentPlayerCard)}`;
+  playerPlayPile.className = `card xlarge shadow ${Object.keys(
+    currentPlayerCard
+  )}`;
   dealerDeck.push(currentPlayerCard);
   playerDeck.splice(currentPlayerCard, 1);
   currentComputerCard = computerDeck[0];
-  computerPlayPile.innerText = `${Object.keys(currentComputerCard)}`;
+  computerPlayPile.className = `card xlarge shadow ${Object.keys(
+    currentComputerCard
+  )}`;
   dealerDeck.push(currentComputerCard);
   computerDeck.splice(currentComputerCard, 1);
   compareCards();
