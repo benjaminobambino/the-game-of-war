@@ -22,15 +22,20 @@
         <div class="message-board"></div>
         <div class="counter" id="computer-counter"></div>
       </section>
-      <section class="card-slots">
-        <div class="card xlarge shadow back-blue player-draw-deck">Player Draw Deck</div>
-        <div id="player-play-pile">Player Play Pile</div>
-        <div id="computer-play-pile">Computer Play Pile</div>
-        <div class="card xlarge shadow back-red computer-draw-deck">Computer Draw Deck</div>
+      <section class="buttons">
+        <button class="play-next-card">Play Next Card</button>
+        <button class="re-deal">Reshuffle and Deal</button>
       </section>
-      <button class="play-next-card">Play Next Card</button>
-      <br>
-      <button class="re-deal">Reshuffle and Deal</button>
+      <section class="card-slots">
+        <div class="card back-blue player-draw-deck">Player Draw Deck</div>
+        <div class="play-pile" id="player-play-pile"></div>
+        <div class="play-pile" id="computer-play-pile"></div>
+        <div class="card back-red computer-draw-deck">Computer Draw Deck</div>
+        <div class="play-pile" id="player-facedown"></div>
+        <div class="play-pile" id="player-tiebreaker"></div>
+        <div class="play-pile" id="player-tiebreaker"></div>
+        <div class="play-pile" id="computer-facedown"></div>
+      </section>
     </container>
     <script type="text/javascript" src="script.js"></script>
     <footer></footer>

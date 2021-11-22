@@ -114,13 +114,11 @@ const checkForWin = () => {
 const playCard = () => {
   messageBoard.innerText = '';
   currentPlayerCard = playerDeck[0];
-  playerPlayPile.className = `card shadow ${Object.keys(currentPlayerCard)}`;
+  playerPlayPile.className = `card ${Object.keys(currentPlayerCard)}`;
   dealerDeck.push(currentPlayerCard);
   playerDeck.splice(currentPlayerCard, 1);
   currentComputerCard = computerDeck[0];
-  computerPlayPile.className = `card shadow ${Object.keys(
-    currentComputerCard
-  )}`;
+  computerPlayPile.className = `card ${Object.keys(currentComputerCard)}`;
   dealerDeck.push(currentComputerCard);
   computerDeck.splice(currentComputerCard, 1);
   compareCards();

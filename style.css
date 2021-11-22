@@ -11,34 +11,44 @@ nav {
   display: flex;
   justify-content: space-evenly;
 }
-.card-slots {
+
+.buttons {
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
-#player-play-pile {
-  /* width: 4.0em;
-  height: 5.5em; */
-  /* background-image: none; */
-  /* background-color: rgba(195, 195, 195, 0.5); */
-  /* border: 0.15em dashed #daa520; */
-  font-size: 42px; 
+.card-slots {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  align-items: center;
+
+  margin: 1vh 15vw;
+}
+
+.play-pile {
+  box-sizing: border-box;
+  display: inline-block;
+  margin: 5px;
+  width: 4.0em;
+  height: 5.5em;
+  font-size: 52px; 
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden;
 }
 
-#computer-play-pile {
-  /* width: 4.0em;
-  height: 5.5em; */
-  /* background-image: none;
-  background-color: rgba(195, 195, 195, 0.5);
-  border: 0.15em dashed #daa520; */
+/* #computer-play-pile {
+  box-sizing: border-box;
+  display: inline-block;
+  margin: 5px 5px 50px 5px;width: 4.0em;
+  height: 5.5em;
   font-size: 42px; 
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden;
-}
+} */
 
 /* Card Displays */
 
@@ -46,7 +56,7 @@ nav {
 .card {
   box-sizing: border-box;
   display: inline-block;
-  margin: 5px 5px 50px 5px;
+  margin: 5px;
   /* Set the card's dimensions, and size it relative to
      it's font size. */
   /* font-size: inherit; */
@@ -70,180 +80,236 @@ nav {
   /* Not a card, but a card-shaped outline to represent a
      droppable place, like an empty pile. */ 
   /* .card.xlarge { */
-    font-size: 42px; }
-  .card.no-border {
-    border: 0; }
-  .card.shadow {
-    box-shadow: 2px 2px 3px 0 rgba(41, 41, 41, 0.75); }
-  .card.outline {
+    font-size: 52px; 
+    border: 0;
+    box-shadow: 2px 2px 3px 0 rgba(41, 41, 41, 0.75); 
+  }
+  
+    .card.outline {
     background-image: none;
     background-color: rgba(195, 195, 195, 0.5);
-    border: 0.15em dashed #daa520; }
+    border: 0.15em dashed #daa520; 
+  }
 
 .aceDiamonds {
-  background-image: url("images/diamonds/diamonds-A.svg"); }
+  background-image: url("images/diamonds/diamonds-A.svg"); 
+}
 
 .kingDiamonds {
-  background-image: url("images/diamonds/diamonds-K.svg"); }
+  background-image: url("images/diamonds/diamonds-K.svg"); 
+}
 
 .queenDiamonds {
-  background-image: url("images/diamonds/diamonds-Q.svg"); }
+  background-image: url("images/diamonds/diamonds-Q.svg"); 
+}
 
 .jackDiamonds {
-  background-image: url("images/diamonds/diamonds-J.svg"); }
+  background-image: url("images/diamonds/diamonds-J.svg"); 
+}
 
 .tenDiamonds {
-  background-image: url("images/diamonds/diamonds-r10.svg"); }
+  background-image: url("images/diamonds/diamonds-r10.svg"); 
+}
 
 .nineDiamonds {
-  background-image: url("images/diamonds/diamonds-r09.svg"); }
+  background-image: url("images/diamonds/diamonds-r09.svg"); 
+}
 
 .eightDiamonds {
-  background-image: url("images/diamonds/diamonds-r08.svg"); }
+  background-image: url("images/diamonds/diamonds-r08.svg"); 
+}
 
 .sevenDiamonds {
-  background-image: url("images/diamonds/diamonds-r07.svg"); }
+  background-image: url("images/diamonds/diamonds-r07.svg"); 
+}
 
 .sixDiamonds {
-  background-image: url("images/diamonds/diamonds-r06.svg"); }
+  background-image: url("images/diamonds/diamonds-r06.svg"); 
+}
 
 .fiveDiamonds {
-  background-image: url("images/diamonds/diamonds-r05.svg"); }
+  background-image: url("images/diamonds/diamonds-r05.svg"); 
+}
 
 .fourDiamonds {
-  background-image: url("images/diamonds/diamonds-r04.svg"); }
+  background-image: url("images/diamonds/diamonds-r04.svg"); 
+}
 
 .threeDiamonds {
-  background-image: url("images/diamonds/diamonds-r03.svg"); }
+  background-image: url("images/diamonds/diamonds-r03.svg"); 
+}
 
 .twoDiamonds {
-  background-image: url("images/diamonds/diamonds-r02.svg"); }
+  background-image: url("images/diamonds/diamonds-r02.svg"); 
+}
 
 .aceHearts {
-  background-image: url("images/hearts/hearts-A.svg"); }
+  background-image: url("images/hearts/hearts-A.svg"); 
+}
 
 .kingHearts {
-  background-image: url("images/hearts/hearts-K.svg"); }
+  background-image: url("images/hearts/hearts-K.svg"); 
+}
 
 .queenHearts {
-  background-image: url("images/hearts/hearts-Q.svg"); }
+  background-image: url("images/hearts/hearts-Q.svg"); 
+}
 
 .jackHearts {
-  background-image: url("images/hearts/hearts-J.svg"); }
+  background-image: url("images/hearts/hearts-J.svg"); 
+}
 
 .tenHearts {
-  background-image: url("images/hearts/hearts-r10.svg"); }
+  background-image: url("images/hearts/hearts-r10.svg"); 
+}
 
 .nineHearts {
-  background-image: url("images/hearts/hearts-r09.svg"); }
+  background-image: url("images/hearts/hearts-r09.svg"); 
+}
 
 .eightHearts {
-  background-image: url("images/hearts/hearts-r08.svg"); }
+  background-image: url("images/hearts/hearts-r08.svg"); 
+}
 
 .sevenHearts {
-  background-image: url("images/hearts/hearts-r07.svg"); }
+  background-image: url("images/hearts/hearts-r07.svg"); 
+}
 
 .sixHearts {
-  background-image: url("images/hearts/hearts-r06.svg"); }
+  background-image: url("images/hearts/hearts-r06.svg"); 
+}
 
 .fiveHearts {
-  background-image: url("images/hearts/hearts-r05.svg"); }
+  background-image: url("images/hearts/hearts-r05.svg"); 
+}
 
 .fourHearts {
-  background-image: url("images/hearts/hearts-r04.svg"); }
+  background-image: url("images/hearts/hearts-r04.svg"); 
+}
 
 .threeHearts {
-  background-image: url("images/hearts/hearts-r03.svg"); }
+  background-image: url("images/hearts/hearts-r03.svg"); 
+}
 
 .twoHearts {
-  background-image: url("images/hearts/hearts-r02.svg"); }
+  background-image: url("images/hearts/hearts-r02.svg"); 
+}
 
 .aceSpades {
-  background-image: url("images/spades/spades-A.svg"); }
+  background-image: url("images/spades/spades-A.svg"); 
+}
 
 .kingSpades {
-  background-image: url("images/spades/spades-K.svg"); }
+  background-image: url("images/spades/spades-K.svg"); 
+}
 
 .queenSpades {
-  background-image: url("images/spades/spades-Q.svg"); }
+  background-image: url("images/spades/spades-Q.svg"); 
+}
 
 .jackSpades {
-  background-image: url("images/spades/spades-J.svg"); }
+  background-image: url("images/spades/spades-J.svg"); 
+}
 
 .tenSpades {
-  background-image: url("images/spades/spades-r10.svg"); }
+  background-image: url("images/spades/spades-r10.svg"); 
+}
 
 .nineSpades {
-  background-image: url("images/spades/spades-r09.svg"); }
+  background-image: url("images/spades/spades-r09.svg"); 
+}
 
 .eightSpades {
-  background-image: url("images/spades/spades-r08.svg"); }
+  background-image: url("images/spades/spades-r08.svg"); 
+}
 
 .sevenSpades {
-  background-image: url("images/spades/spades-r07.svg"); }
+  background-image: url("images/spades/spades-r07.svg"); 
+}
 
 .sixSpades {
-  background-image: url("images/spades/spades-r06.svg"); }
+  background-image: url("images/spades/spades-r06.svg"); 
+}
 
 .fiveSpades {
-  background-image: url("images/spades/spades-r05.svg"); }
+  background-image: url("images/spades/spades-r05.svg"); 
+}
 
 .fourSpades {
-  background-image: url("images/spades/spades-r04.svg"); }
+  background-image: url("images/spades/spades-r04.svg"); 
+}
 
 .threeSpades {
-  background-image: url("images/spades/spades-r03.svg"); }
+  background-image: url("images/spades/spades-r03.svg"); 
+}
 
 .twoSpades {
-  background-image: url("images/spades/spades-r02.svg"); }
+  background-image: url("images/spades/spades-r02.svg"); 
+}
 
 .aceClubs {
-  background-image: url("images/clubs/clubs-A.svg"); }
+  background-image: url("images/clubs/clubs-A.svg"); 
+}
 
 .kingClubs {
-  background-image: url("images/clubs/clubs-K.svg"); }
+  background-image: url("images/clubs/clubs-K.svg"); 
+}
 
 .queenClubs {
-  background-image: url("images/clubs/clubs-Q.svg"); }
+  background-image: url("images/clubs/clubs-Q.svg"); 
+}
 
 .jackClubs {
-  background-image: url("images/clubs/clubs-J.svg"); }
+  background-image: url("images/clubs/clubs-J.svg"); 
+}
 
 .tenClubs {
-  background-image: url("images/clubs/clubs-r10.svg"); }
+  background-image: url("images/clubs/clubs-r10.svg"); 
+}
 
 .nineClubs {
-  background-image: url("images/clubs/clubs-r09.svg"); }
+  background-image: url("images/clubs/clubs-r09.svg"); 
+}
 
 .eightClubs {
-  background-image: url("images/clubs/clubs-r08.svg"); }
+  background-image: url("images/clubs/clubs-r08.svg"); 
+}
 
 .sevenClubs {
-  background-image: url("images/clubs/clubs-r07.svg"); }
+  background-image: url("images/clubs/clubs-r07.svg"); 
+}
 
 .sixClubs {
-  background-image: url("images/clubs/clubs-r06.svg"); }
+  background-image: url("images/clubs/clubs-r06.svg"); 
+}
 
 .fiveClubs {
-  background-image: url("images/clubs/clubs-r05.svg"); }
+  background-image: url("images/clubs/clubs-r05.svg"); 
+}
 
 .fourClubs {
-  background-image: url("images/clubs/clubs-r04.svg"); }
+  background-image: url("images/clubs/clubs-r04.svg"); 
+}
 
 .threeClubs {
-  background-image: url("images/clubs/clubs-r03.svg"); }
+  background-image: url("images/clubs/clubs-r03.svg"); 
+}
 
 .twoClubs {
-  background-image: url("images/clubs/clubs-r02.svg"); }
+  background-image: url("images/clubs/clubs-r02.svg"); 
+}
 
 .card.back {
-  background-image: url("images/backs/blue.svg"); }
+  background-image: url("images/backs/blue.svg"); 
+}
 
 .card.back-blue {
-  background-image: url("images/backs/blue.svg"); }
+  background-image: url("images/backs/blue.svg"); 
+}
 
 .card.back-red {
-  background-image: url("images/backs/red.svg"); }
+  background-image: url("images/backs/red.svg"); 
+}
 
 /* Re-orients the cards for different directions. While
    they are symmetric, it's still important to orient
