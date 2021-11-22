@@ -83,6 +83,8 @@ const shuffleAndDeal = () => {
   messageBoard.innerText = '';
   currentPlayerCard = {};
   currentComputerCard = {};
+  playerPlayPile.className = '';
+  computerPlayPile.className = '';
   dealerDeck.push(...playerDeck, ...computerDeck);
   playerDeck = [];
   computerDeck = [];
@@ -112,13 +114,11 @@ const checkForWin = () => {
 const playCard = () => {
   messageBoard.innerText = '';
   currentPlayerCard = playerDeck[0];
-  playerPlayPile.className = `card xlarge shadow ${Object.keys(
-    currentPlayerCard
-  )}`;
+  playerPlayPile.className = `card shadow ${Object.keys(currentPlayerCard)}`;
   dealerDeck.push(currentPlayerCard);
   playerDeck.splice(currentPlayerCard, 1);
   currentComputerCard = computerDeck[0];
-  computerPlayPile.className = `card xlarge shadow ${Object.keys(
+  computerPlayPile.className = `card shadow ${Object.keys(
     currentComputerCard
   )}`;
   dealerDeck.push(currentComputerCard);
