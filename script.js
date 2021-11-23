@@ -162,11 +162,11 @@ const startTiebreakerWar = () => {
     setTimeout(() => {
       messageBoard.innerText = `Play your next card and let's settle this ...`;
       let unknownPlayerCard = playerDeck[0];
-      playerPlayPile.className = `card back-blue`;
+      playerPlayPile.className = `card back`;
       dealerDeck.push(unknownPlayerCard);
       playerDeck.splice(unknownPlayerCard, 1);
       let unknownComputerCard = computerDeck[0];
-      computerPlayPile.className = `card back-red`;
+      computerPlayPile.className = `card back`;
       dealerDeck.push(unknownComputerCard);
       computerDeck.splice(unknownComputerCard, 1);
       startGame();

@@ -2,18 +2,51 @@ body {
   background-color: #8e2708;
   background-image: url("images/page-theme/3306160.jpeg");
   background-repeat: no-repeat;
-  /* background-position: center center; */
   background-size: cover;
+  font-family: 'Estonia', cursive;
 }
 
 h1 {
   text-align: center;
+  font-size: 70px;
 }
 
 nav {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+
+  margin: 0;
 }
+
+a {
+  color: black;
+  text-decoration: none;
+  margin: 0 1vw;
+}
+
+h2 {
+  font-size: 50px;
+  margin: 5px 0;
+}
+
+h3 {
+  font-size: 40px;
+}
+
+h4, .counter, .message-board {
+  font-size: 30px;
+  margin: 10px 0;
+}
+
+.message-board {
+  font-weight: bold;
+}
+
+p {
+  font-size: 26px;
+  margin: 5px 0;
+}
+
 .counters {
   display: flex;
   justify-content: space-evenly;
@@ -22,7 +55,20 @@ nav {
 .buttons {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
+
+  /* margin: 1vh 20vw; */
+}
+
+button {
+  font-family: 'Estonia', cursive;
+  font-size: 26px;
+  color: #eedeaf;
+  background: #1e0305;
+  margin: 1vh 4vw;
+  border-radius: 0.20em;
+  border: 1px solid #111;
+  padding: 1vh 1vw;
 }
 
 .card-slots {
@@ -274,45 +320,10 @@ nav {
 }
 
 .card.back {
-  background-image: url("images/backs/blue.svg"); 
+  background-image: url("images/page-theme/Image-Source-PlusPNG.com.png"); 
+  background-size: 90%;
 }
 
-.card.back-blue {
-  background-image: url("images/backs/blue.svg"); 
+.rules {
+  margin: 0 10vw;
 }
-
-.card.back-red {
-  background-image: url("images/backs/red.svg"); 
-}
-
-/* Re-orients the cards for different directions. While
-   they are symmetric, it's still important to orient
-   them correctly in case text or other symbols are
-   layered on them with CSS pseudo-selectors, new
-   classes/rules, etc. */
-.card.west,
-.card.W {
-  transform: rotate(90deg);
-  margin: auto 0.75em; }
-  .card.west.shadow,
-  .card.W.shadow {
-    box-shadow: 2px -2px 3px 0 rgba(41, 41, 41, 0.75); }
-
-.card.north,
-.card.N {
-  transform: rotate(180deg); }
-  .card.north.shadow,
-  .card.N.shadow {
-    box-shadow: -2px -2px 3px 0 rgba(41, 41, 41, 0.75); }
-
-.card.east,
-.card.E {
-  transform: rotate(270deg);
-  margin: auto 0.75em; }
-  .card.east.shadow,
-  .card.E.shadow {
-    box-shadow: -2px 2px 3px 0 rgba(41, 41, 41, 0.75); }
-
-/* .rules {
-  margin: auto 20vw;
-} */

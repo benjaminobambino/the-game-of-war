@@ -4,18 +4,18 @@
 #### [GitHub](https://github.com/benjaminobambino) | [LinkedIn](https://www.linkedin.com/in/benjamin-peck-352a3241/) | [CodePen](https://codepen.io/benjaminobambino/)
 ***
 ### ***Description***
-#### This will be a browser-based, themed version of the classic card game, "War," using HTML, CSS, and JavaScript.
+#### This is a browser-based version of the classic card game, "War," using HTML, CSS, and JavaScript.
 ***
 ### ***Technologies Used***
 * JavaScript
 * CSS
-  * Flexbox or Grid
+  * Flexbox
 * HTML
 ***
 ### ***Getting Started***
-##### A Trello board is being used to keep track of development progress. It can be viewed [here](https://trello.com/b/ymfaB88v/the-game-of-war).
+##### Once launched, visit the "Rules" page or just click "Play Next Card" to begin.
+##### A Trello board was used to keep track of development progress. It can be viewed [here](https://trello.com/b/ymfaB88v/the-game-of-war).
 ##### The project itself will be deployed and able to be viewed on [Surge](https://surge.sh/).
-##### Once opened, read the back-story, start clicking, and let the game begin.
 ***
 ### ***Screenshots***
 #### The Game of War
@@ -37,6 +37,8 @@
 ##### Image: [Wallup.net](https://wallup.net/poker-cards-2/)
 
 ##### Background Image: [WallPaperAccess.com](https://wallpaperaccess.com/old-scroll)
+
+##### Card Background Image: [PlusPNG.com](https://pluspng.com/png-131540.html)
 
 <!-- ##### Markdown Guide: [ia.net](https://ia.net/writer/support/general/markdown-guide)
 
