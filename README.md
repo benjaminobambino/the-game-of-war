@@ -38,4 +38,4 @@
 
 ##### Background Image: [WallPaperAccess.com](https://wallpaperaccess.com/old-scroll)
 
-##### Card Background Image: [PlusPNG.com](https://pluspng.com/png-131540.html)
+##### Card Back Image: [PlusPNG.com](https://pluspng.com/png-131540.html)
