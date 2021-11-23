@@ -1,5 +1,3 @@
-// GLOBAL VARIABLES ////////////////////////////////
-
 let dealerDeck = [
   { twoHearts: 2 },
   { twoDiamonds: 2 },
@@ -76,8 +74,6 @@ const messageBoard = document.querySelector('.message-board');
 const playNextCard = document.querySelector('.play-next-card');
 
 const reDeal = document.querySelector('.re-deal');
-
-// GAME LOGIC FUNCTIONS ////////////////////////////////
 
 const shuffleAndDeal = () => {
   messageBoard.innerText = '';
@@ -176,8 +172,6 @@ const keepScore = () => {
   computerCardCount.innerText = `My cards: ${computerDeck.length}`;
 };
 
-// EVENT LISTENERS ////////////////////////////////
-
 const startGame = () => {
   playNextCard.addEventListener('click', playCard);
 };
@@ -190,8 +184,6 @@ reDeal.addEventListener('click', () => {
 const gameOver = () => {
   playNextCard.removeEventListener('click', playCard);
 };
-
-// FUNCTIONS CALLED ON LAUNCH
 
 startGame();
 
