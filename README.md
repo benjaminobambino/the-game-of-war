@@ -4,7 +4,7 @@
 #### [GitHub](https://github.com/benjaminobambino) | [LinkedIn](https://www.linkedin.com/in/benjamin-peck-352a3241/) | [CodePen](https://codepen.io/benjaminobambino/)
 ***
 ### ***Description***
-#### This is a browser-based version of the classic card game, "War," using HTML, CSS, and JavaScript.
+#### "The Game of War" is a browser-based version of the classic card game, "War," using HTML, CSS, and JavaScript.
 ***
 ### ***Technologies Used***
 * JavaScript
@@ -13,15 +13,15 @@
 * HTML
 ***
 ### ***Getting Started***
-##### The project has been deployed and can be viewed on [Surge](https://the-game-of-war.surge.sh/).
-##### For a refresher, visit the "Rules" page. Otherwise, just click "Play Next Card" to begin.
-##### A Trello board was used to keep track of development progress. It can be viewed [here](https://trello.com/b/ymfaB88v/the-game-of-war).
+#### The project has been deployed and can be viewed on [Surge](https://the-game-of-war.surge.sh/).
+#### For a refresher, visit the "Rules" page. Otherwise, just click "Play Next Card" to begin.
+#### A Trello board was used to keep track of development progress. It can be viewed [here](https://trello.com/b/ymfaB88v/the-game-of-war).
 ***
 ### ***Screenshots***
-#### Game Play
-![Game Play](https://i.imgur.com/qTVPg8Q.jpg)
+#### Gameplay
+![Gameplay](images/readme-pics/gameplay.png)
 #### The War
-![The War](https://i.imgur.com/PLEDQff.jpg)
+![The War](images/readme-pics/the-war.png)
 #### Rules Page
 ![Rules Page](images/readme-pics/rules-page.png)
 ***
