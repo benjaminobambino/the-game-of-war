@@ -93,9 +93,6 @@ const shuffleAndDeal = () => {
     const newPlayerCard = Math.floor(Math.random() * dealerDeck.length);
     playerDeck.push(dealerDeck[newPlayerCard]);
     dealerDeck.splice(newPlayerCard, 1);
-    // setTimeout(() => {
-    // keepScore();
-    // }, 1000);
     const newComputerCard = Math.floor(Math.random() * dealerDeck.length);
     computerDeck.push(dealerDeck[newComputerCard]);
     dealerDeck.splice(newComputerCard, 1);
@@ -179,10 +176,6 @@ const keepScore = () => {
   computerCardCount.innerText = `My cards: ${computerDeck.length}`;
 };
 
-const gameOver = () => {
-  playNextCard.removeEventListener('click', playCard);
-};
-
 // EVENT LISTENERS ////////////////////////////////
 
 const startGame = () => {
@@ -193,6 +186,10 @@ reDeal.addEventListener('click', () => {
   startGame();
   shuffleAndDeal();
 });
+
+const gameOver = () => {
+  playNextCard.removeEventListener('click', playCard);
+};
 
 // FUNCTIONS CALLED ON LAUNCH
 

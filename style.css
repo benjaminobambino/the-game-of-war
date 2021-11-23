@@ -56,8 +56,6 @@ p {
   display: flex;
   flex-direction: row;
   justify-content: center;
-
-  /* margin: 1vh 20vw; */
 }
 
 button {
@@ -69,6 +67,10 @@ button {
   border-radius: 0.20em;
   border: 1px solid #111;
   padding: 1vh 1vw;
+}
+
+.rules {
+  margin: 0 10vw;
 }
 
 .card-slots {
@@ -322,8 +324,4 @@ button {
 .card.back {
   background-image: url("images/page-theme/Image-Source-PlusPNG.com.png"); 
   background-size: 90%;
-}
-
-.rules {
-  margin: 0 10vw;
 }
