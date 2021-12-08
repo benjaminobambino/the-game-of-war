@@ -1,7 +1,7 @@
 # The Game of War
 ## Date: 11/23/2021
 ### By: Benjamin Peck
-#### [GitHub](https://github.com/benjaminobambino) | [LinkedIn](https://www.linkedin.com/in/benjamin-peck-352a3241/) | [CodePen](https://codepen.io/benjaminobambino/)
+#### [GitHub](https://github.com/benjaminobambino) | [LinkedIn](https://www.linkedin.com/in/benjaminlpeck/) | [CodePen](https://codepen.io/benjaminobambino/)
 ***
 ### ***Description***
 #### "The Game of War" is a browser-based version of the classic card game, "War," using HTML, CSS, and JavaScript.
